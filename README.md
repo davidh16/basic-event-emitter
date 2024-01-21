@@ -58,3 +58,5 @@ func NewServer(cfg *config.Config, socketClient *gosocketio.Client) *Server {
 
 }
 ```
+
+Application can be run inside Docker by creating docker-compose.yml file (use docker-compose-example.yml for the reference) and running `docker compose up` command.

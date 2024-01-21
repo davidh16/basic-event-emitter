@@ -21,4 +21,4 @@ networks:
 
 # network type is external because, in my case, socket.io server was running inside another docker container
 # which was part of another network named "custom_network" therefore for this container to be able to access the
-# server, it's network had to be defined like this.
+# server, its network had to be defined like this.
