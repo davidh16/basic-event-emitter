@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  basic-event-emitter:
+    container_name: basic-event-emitter
+    volumes:
+      - volume_path:/app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8123:8123"
+      - "18123:2345"
+    networks:
+      - my-proxy-net
+
+networks:
+  my-proxy-net:
+    name: custom_network
+    external: true
+
+# network type is external because, in my case, socket.io server was running inside another docker container
+# which was part of another network named "custom_network" therefore for this container to be able to access the
+# server, it's network had to be defined like this.
